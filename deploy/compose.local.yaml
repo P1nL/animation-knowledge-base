@@ -1,0 +1,57 @@
+# Overlay the pinned upstream Compose file; never reuse another project's volumes.
+services:
+  api:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/dify-api:1.18.0
+  worker:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/dify-api:1.18.0
+  worker_beat:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/dify-api:1.18.0
+  web:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/dify-web:1.18.0
+  sandbox:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/dify-sandbox:0.2.15
+  local_sandbox:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/dify-agent-local-sandbox:1.18.0
+  agent_backend:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/dify-agent-backend:1.18.0
+  ssrf_proxy:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/ubuntu/squid:latest
+  agent_ssrf_proxy:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/ubuntu/squid:latest
+  qdrant:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/qdrant:v1.8.3
+  init_permissions:
+    image: python:3.12-slim
+  db_postgres:
+    image: postgres:15
+  redis:
+    image: redis:7.2.7
+  nginx:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/library/nginx:latest
+    ports: !override
+      - "127.0.0.1:${AKB_HTTP_PORT:-18080}:80"
+  plugin_daemon:
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/langgenius/dify-plugin-daemon:0.6.10-local
+    ports: !override []
+  ollama:
+    # This official flavor includes the same CPU stage without the large CUDA bundles.
+    # No GPU devices are mapped, so inference uses its CPU backend.
+    image: ${AKB_IMAGE_PREFIX:-docker.io}/ollama/ollama:0.40.11-rocm
+    restart: unless-stopped
+    environment:
+      OLLAMA_HOST: "0.0.0.0:11434"
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "1"
+    ports:
+      - "127.0.0.1:${AKB_OLLAMA_PORT:-11435}:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    mem_limit: 4g
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  ollama_models:

@@ -1,0 +1,15 @@
+[project]
+name = "animation-knowledge-base"
+version = "0.1.0"
+description = "Local source preparation and evaluation tools for the animation knowledge base"
+requires-python = ">=3.12,<3.13"
+dependencies = ["pypdf==6.10.0", "Pillow==12.3.0"]
+
+[project.optional-dependencies]
+ocr = [
+    "paddleocr==3.7.0",
+    "paddlepaddle==3.3.1",
+]
+
+[tool.uv]
+package = false

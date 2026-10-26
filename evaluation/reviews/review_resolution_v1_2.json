@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-10-26",
+  "basis": "evaluation/reviews/independent_ai_v1.json",
+  "status": "implemented_pending_post_edit_review",
+  "source_release": "source-v3",
+  "question_dataset": "final-v1.2-review",
+  "changed_cards": {
+    "book-014": "明确動画职种而非泛指所有动画师；参与者说明定位到133页。",
+    "book-016": "用52页压迫感例子收窄概括，不把自由表现许可归为原文明说。",
+    "book-023": "补139页修正用纸/修正集对照证据。",
+    "book-024": "补61页動画检查的跨页对照证据。",
+    "book-026": "忠实直述本书一秒24分格，另列未知项目不外推边界。",
+    "book-029": "补137页タイムシート定义的对照来源。",
+    "book-032": "补137页镜头时间表与进度汇总的对照来源。",
+    "book-033": "区分预印格号刻度和实际镜头已填写的逐格分配。"
+  },
+  "changed_questions_from_parent": {
+    "FINAL-01": "明确動画职种，避免动画人员泛称。",
+    "FINAL-14": "落实独立复核附注，保留特殊处理数据的条件性和承载方式弹性。",
+    "FINAL-19": "补明作画监督作者前提，解决原题证据不足而无条件要求作监修正的问题。",
+    "FINAL-20": "落实独立复核附注：OCR为新题显式任务，禁止追溯旧题；按核心影响而非错误个数计分。"
+  },
+  "changed_question_ids_from_original": [
+    "FINAL-01",
+    "FINAL-03",
+    "FINAL-08",
+    "FINAL-09",
+    "FINAL-14",
+    "FINAL-19",
+    "FINAL-20",
+    "FINAL-21"
+  ],
+  "old_results_changed": false,
+  "source_index_updated": false,
+  "new_model_requests": 0,
+  "independent_review_of_updated_content": false,
+  "human_review_of_updated_content": false,
+  "scope_note": "Primary findings and directly related minor source/page/wording notes implemented; no new topic, page pool, retrieval tuning or runner change."
+}

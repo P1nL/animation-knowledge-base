@@ -1,0 +1,606 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-10-26",
+  "review_type": "independent_context_ai_source_and_reference_review",
+  "status": "completed_with_revision_requests",
+  "reviewer_type": "AI",
+  "reviewer_agent": "Aristotle",
+  "reviewer_agent_id": "01a17839-8a4b-7b10-bc4b-ce65c2601ee7",
+  "source_release": "source-v2",
+  "question_set": "final-v1",
+  "revision_candidate": "final-v1.1-review",
+  "stage1_completed_at": "2026-10-26T13:01:07.623Z",
+  "completed_at": "2026-10-26T13:17:44.252Z",
+  "fresh_context": true,
+  "cross_model_validation": false,
+  "prior_answers_or_scores_seen_declared": false,
+  "blindness_note": "Staged artifacts and reviewer declaration; not an externally enforced blind-review guarantee. Generic workspace summary was preloaded.",
+  "pages_viewed": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    61,
+    63,
+    64,
+    133,
+    134,
+    135,
+    136,
+    137,
+    139,
+    150,
+    218,
+    221
+  ],
+  "summary": {
+    "question_count": 30,
+    "card_count": 22,
+    "revision_count": 6,
+    "questions": {
+      "supported": 28,
+      "needs_revision": 2
+    },
+    "cards": {
+      "supported": 21,
+      "needs_revision": 1
+    },
+    "revisions": {
+      "accepted": 4,
+      "accepted_with_notes": 2
+    },
+    "substantive_findings": [
+      "FINAL-19缺作者前提，不能无条件把另纸修正认定为作监修正；须修题或接受条件答案。",
+      "FINAL-20原题未问OCR，但required_points含额外OCR要求；新版已补问，不追溯改变旧题。",
+      "book-016将具体压迫感例外写成原文明说自由表现，建议收窄并区分整理推论。"
+    ],
+    "minor_notes": [
+      "book-024末句跨页对照建议补61；book-029、book-032可补137；book-023的材料/汇编对照可补139。核心释义有本次已看原页支持，不以这些追溯小问题判不支持。",
+      "book-026的一秒24格原文为直述，宜把新项目不外推限制与源文表述分开。",
+      "FINAL-01/book-014中文动画人员宜写動画人员；FINAL-14新版须保留特殊处理指定数据的条件性。",
+      "book-033有预印数字刻度；没有实际镜头逐格分配不等于没有预印帧格编号。"
+    ]
+  },
+  "question_decisions": [
+    {
+      "id": "FINAL-01",
+      "decision": "supported",
+      "reason": "核心活动和有条件参加者均由p50、51、133直接支持；实际到会名单需记录是合理限制。建议将动画人员标成動画人员以免泛化。",
+      "evidence_pages": [
+        50,
+        51,
+        133
+      ]
+    },
+    {
+      "id": "FINAL-02",
+      "decision": "supported",
+      "reason": "p64直接区分总作监与各话作监并否定系列必设；参考对职责范围而非具体身份作答，支持。某一集应理解为其担当话数。",
+      "evidence_pages": [
+        64,
+        134
+      ]
+    },
+    {
+      "id": "FINAL-03",
+      "decision": "supported",
+      "reason": "p135的具体修正画与p139的修正材料不同；由到货不能证明完成或检查是有效推论，未假造审批流程。",
+      "evidence_pages": [
+        135,
+        139
+      ]
+    },
+    {
+      "id": "FINAL-04",
+      "decision": "supported",
+      "reason": "p139直接支持修正集的参考用途及准备稿的决定前、临时性质；分发不定稿是合理推论。",
+      "evidence_pages": [
+        139
+      ]
+    },
+    {
+      "id": "FINAL-05",
+      "decision": "supported",
+      "reason": "p134、136直接支持素材对象和时代变化；参考保留历史语境，未外推所有现代工作室。",
+      "evidence_pages": [
+        134,
+        136
+      ]
+    },
+    {
+      "id": "FINAL-06",
+      "decision": "supported",
+      "reason": "p136明确区分职种与工程，所列工序与参考一致；当前预算边界需项目确认是额外合理建议。",
+      "evidence_pages": [
+        136
+      ]
+    },
+    {
+      "id": "FINAL-07",
+      "decision": "supported",
+      "reason": "p150确有三个孔和切下孔部纸片两义，情境选后者有直接证据。",
+      "evidence_pages": [
+        150
+      ]
+    },
+    {
+      "id": "FINAL-08",
+      "decision": "supported",
+      "reason": "p139进度概览与p137镜头作业指示不同；不能直接替代是用途差异导出的有效结论。",
+      "evidence_pages": [
+        137,
+        139
+      ]
+    },
+    {
+      "id": "FINAL-09",
+      "decision": "supported",
+      "reason": "p51明确先大致讨论，再于Layout阶段与监督或作监确定最终距离，参考保留该先后关系。",
+      "evidence_pages": [
+        51
+      ]
+    },
+    {
+      "id": "FINAL-10",
+      "decision": "supported",
+      "reason": "p52有压迫感例外，p53要求关注可见重点；不能只凭无留白否决、也不自动放行是有根据的应用。",
+      "evidence_pages": [
+        52,
+        53,
+        63
+      ]
+    },
+    {
+      "id": "FINAL-11",
+      "decision": "supported",
+      "reason": "p63说明通常作监兼任，因此无单列职称不证明无任务；确认承担者是推论而非书内项目事实。",
+      "evidence_pages": [
+        63
+      ]
+    },
+    {
+      "id": "FINAL-12",
+      "decision": "supported",
+      "reason": "p64有完成原画后助阵安排，p135要求接受作监指示且主要改费时原画；参考没有臆造独立签核权。",
+      "evidence_pages": [
+        64,
+        135
+      ]
+    },
+    {
+      "id": "FINAL-13",
+      "decision": "supported",
+      "reason": "p134定义的是实际影像替换，不是上传；核对rush相应版本是定义的合理落实，且参考用或区分两种替换。",
+      "evidence_pages": [
+        134
+      ]
+    },
+    {
+      "id": "FINAL-14",
+      "decision": "supported",
+      "reason": "p134列Layout、时间表、仕上、背景数据及場合によって的处理指定；候选使用可能和实际需要，未把特殊处理一概强制PSD。",
+      "evidence_pages": [
+        134
+      ]
+    },
+    {
+      "id": "FINAL-15",
+      "decision": "supported",
+      "reason": "p61是交仕上前的動画检查，p136是彩色后错涂漏涂检查；不能自动豁免后者的结论支持。",
+      "evidence_pages": [
+        61,
+        136
+      ]
+    },
+    {
+      "id": "FINAL-16",
+      "decision": "supported",
+      "reason": "p139支持准备稿临时性质；保留待确认说明、核对正式决定是应用建议，不应被说成原文规定的审批系统。",
+      "evidence_pages": [
+        139
+      ]
+    },
+    {
+      "id": "FINAL-17",
+      "decision": "supported",
+      "reason": "p139修正集包含实际参考内容而修正纸为材料；适用版本核对是合理管理补充，不是原文专门流程。",
+      "evidence_pages": [
+        139
+      ]
+    },
+    {
+      "id": "FINAL-18",
+      "decision": "supported",
+      "reason": "p150定义动作时机间隔，p137为记录载体；排期更改不能证明动作修改的结论支持。",
+      "evidence_pages": [
+        137,
+        150
+      ]
+    },
+    {
+      "id": "FINAL-19",
+      "decision": "needs_revision",
+      "reason": "p135把作監修正定义为作画监督绘制的修正画，而原题第二物仅说另纸修正，未给作者；p139又说明演出也用修正纸。候选无条件对应作監修正，同时要求不猜作者，存在证据缺口，应允许条件性或仅称修正画的等价答案。",
+      "evidence_pages": [
+        135,
+        139
+      ]
+    },
+    {
+      "id": "FINAL-20",
+      "decision": "needs_revision",
+      "reason": "共用和分栏主结论获p137、218支持；但required_points第二项把OCR词序防错列成必答，而原题并未出现OCR误读情境。不能因回答正确解释共用及分栏、却没提OCR，就判缺点。该问题在考核范围，不是主参考结论错误。",
+      "evidence_pages": [
+        137,
+        218
+      ]
+    },
+    {
+      "id": "FINAL-21",
+      "decision": "supported",
+      "reason": "p139进度、p137镜头指示、p134数据清单构成三个不同层次；完成统计不足以证明交齐是合理推论。",
+      "evidence_pages": [
+        134,
+        137,
+        139
+      ]
+    },
+    {
+      "id": "FINAL-22",
+      "decision": "supported",
+      "reason": "p139支持参考用途，p64否定总作监必设；统一签字权在这些页未说明，候选正确区分不能推出与不存在。",
+      "evidence_pages": [
+        64,
+        134,
+        139
+      ]
+    },
+    {
+      "id": "FINAL-23",
+      "decision": "supported",
+      "reason": "p218一张时间表与p221上下两张表视觉分离；参考按三表理解，未把合成加等号变成返修规则。",
+      "evidence_pages": [
+        218,
+        221
+      ]
+    },
+    {
+      "id": "FINAL-24",
+      "decision": "supported",
+      "reason": "p150孔部补强是固定问题、Timing是动作间隔，结合p137时间指示不能互相替代；分开检查是应用推论。",
+      "evidence_pages": [
+        137,
+        150
+      ]
+    },
+    {
+      "id": "FINAL-25",
+      "decision": "supported",
+      "reason": "p221空表无填写个案，R并非验收值；拒绝推断批准人日期状态支持。索取授权资料是合理建议而非表内字段。",
+      "evidence_pages": [
+        221
+      ]
+    },
+    {
+      "id": "FINAL-26",
+      "decision": "supported",
+      "reason": "p139直接说明演出也使用修正纸，未设颜色作者映射；p135的修正画定义也不赋予颜色批准意义，参考支持。",
+      "evidence_pages": [
+        135,
+        139
+      ]
+    },
+    {
+      "id": "FINAL-27",
+      "decision": "supported",
+      "reason": "p150定义与p137每秒分格均不决定未知动作的逐张占格；补充条件是合理需要，不应强制复述每种项目规范。",
+      "evidence_pages": [
+        137,
+        150
+      ]
+    },
+    {
+      "id": "FINAL-28",
+      "decision": "supported",
+      "reason": "p63有兼任和负荷、资源条件，无12集人数公式；候选拒绝固定人数且不否定按条件另设，支持。",
+      "evidence_pages": [
+        63
+      ]
+    },
+    {
+      "id": "FINAL-29",
+      "decision": "supported",
+      "reason": "p134描述特定软件工作流，没有当前接收方的排他性规范；不能保证格式或工具唯一的结论成立。",
+      "evidence_pages": [
+        134
+      ]
+    },
+    {
+      "id": "FINAL-30",
+      "decision": "supported",
+      "reason": "p218预印栏位和时间格存在，但没有某镜头填写内容；参考不挪用p137另一示例，拒绝编造内容正确。",
+      "evidence_pages": [
+        137,
+        218
+      ]
+    }
+  ],
+  "card_decisions": [
+    {
+      "id": "book-013",
+      "decision": "supported",
+      "reason": "p61中下段及角色项目明确支持交仕上、原画意图、画张齐全、后续作业性、注意事项及新人照顾。",
+      "evidence_pages": [
+        61
+      ]
+    },
+    {
+      "id": "book-014",
+      "decision": "supported",
+      "reason": "p50会议图及下部、p51说明事项、p133作打条共同支持活动、角色及条件出席。",
+      "evidence_pages": [
+        50,
+        51,
+        133
+      ]
+    },
+    {
+      "id": "book-015",
+      "decision": "supported",
+      "reason": "p51列演出说明事项和歩き例，先大致沟通后Layout确定。",
+      "evidence_pages": [
+        51
+      ]
+    },
+    {
+      "id": "book-016",
+      "decision": "needs_revision",
+      "reason": "p52、53、63支持综合设计能力及为具体演出目的调整构图，但p52的明确例子是为表现压迫感而不留白。",
+      "evidence_pages": [
+        52,
+        53,
+        63
+      ]
+    },
+    {
+      "id": "book-017",
+      "decision": "supported",
+      "reason": "p54原画与動画段和p64原画段支持表演、动作、连接画、清线以及画力仅必要条件。",
+      "evidence_pages": [
+        54,
+        64
+      ]
+    },
+    {
+      "id": "book-018",
+      "decision": "supported",
+      "reason": "p63右栏明确通常作监兼任、工作量及人材预算考量和高能力需求。",
+      "evidence_pages": [
+        63
+      ]
+    },
+    {
+      "id": "book-019",
+      "decision": "supported",
+      "reason": "p64总作监/各话作监及p134作监条和右侧不同作品示意均支持职责、非必设和灵活分工。",
+      "evidence_pages": [
+        64,
+        134
+      ]
+    },
+    {
+      "id": "book-020",
+      "decision": "supported",
+      "reason": "p135作监补明确指示及耗时原画修改，p64支持预设或临时助阵。",
+      "evidence_pages": [
+        64,
+        135
+      ]
+    },
+    {
+      "id": "book-021",
+      "decision": "supported",
+      "reason": "p134差替条支持线摄换彩色或retake换修正版。",
+      "evidence_pages": [
+        134
+      ]
+    },
+    {
+      "id": "book-022",
+      "decision": "supported",
+      "reason": "p134撮入数据清单及cut袋管理、p136撮出素材检查和数码变化均支持。",
+      "evidence_pages": [
+        134,
+        136
+      ]
+    },
+    {
+      "id": "book-023",
+      "decision": "supported",
+      "reason": "p135左下定义明确作者、目的和另纸修正画。",
+      "evidence_pages": [
+        135,
+        139
+      ]
+    },
+    {
+      "id": "book-024",
+      "decision": "supported",
+      "reason": "p136支持岗位/工程/仕上检查核心；最后一句与動画检查的跨阶段对照由p61补充支持。",
+      "evidence_pages": [
+        61,
+        136
+      ]
+    },
+    {
+      "id": "book-025",
+      "decision": "supported",
+      "reason": "p137左上実線明说黑铅笔线、扫描后显示主线层。",
+      "evidence_pages": [
+        137
+      ]
+    },
+    {
+      "id": "book-026",
+      "decision": "supported",
+      "reason": "p137シート条明说内容、共同使用者、一秒24分格及六秒常用三秒并用；p150回指。",
+      "evidence_pages": [
+        137,
+        150
+      ]
+    },
+    {
+      "id": "book-027",
+      "decision": "supported",
+      "reason": "p139修正集条说明原画修正复印、追加表情姿势及长期角色画法更新。",
+      "evidence_pages": [
+        139
+      ]
+    },
+    {
+      "id": "book-028",
+      "decision": "supported",
+      "reason": "p139定义及对白和p135示意支持薄彩纸、演出也用及材料/成果区分。",
+      "evidence_pages": [
+        135,
+        139
+      ]
+    },
+    {
+      "id": "book-029",
+      "decision": "supported",
+      "reason": "p150タイミング定义动作时机间隔；同页タイムシート回指シート，载体用途由已看p137展开。",
+      "evidence_pages": [
+        137,
+        150
+      ]
+    },
+    {
+      "id": "book-030",
+      "decision": "supported",
+      "reason": "p150右栏三个词条直接支持工具、孔的两义及补强方式。",
+      "evidence_pages": [
+        150
+      ]
+    },
+    {
+      "id": "book-031",
+      "decision": "supported",
+      "reason": "p139準備稿条直接支持决定前状态、监督检查延迟时临时分发。",
+      "evidence_pages": [
+        139
+      ]
+    },
+    {
+      "id": "book-032",
+      "decision": "supported",
+      "reason": "p139集计表支持作品/各话进展、cut持有与总枚数及担当制作用模板；与时间表对照有p137支持。",
+      "evidence_pages": [
+        137,
+        139
+      ]
+    },
+    {
+      "id": "book-033",
+      "decision": "supported",
+      "reason": "p218空表目视可见全部所列识别栏、MEMO、四组栏和A-F；p137支持共用用途。",
+      "evidence_pages": [
+        137,
+        218
+      ]
+    },
+    {
+      "id": "book-034",
+      "decision": "supported",
+      "reason": "p221上下确为合成伝票和リテイク指示票；下表标题、話、C-、R理由与大R均可见。",
+      "evidence_pages": [
+        221
+      ]
+    }
+  ],
+  "revision_decisions": [
+    {
+      "id": "FINAL-03",
+      "decision": "accepted",
+      "reason": "p135修正画与p139材料区分清楚；改为询问具体所指与到货证据，接受修正稿等语义等价表述，不强制背诵用途，解决措辞依赖而不降低材料/成果区分要求。",
+      "evidence_pages": [
+        135,
+        139
+      ],
+      "recommended_change": "无需额外改题。执行说明应保留语义边界：仅说作业进行中而未交代实际修正内容，不等于已识别修正画；不能因使用修正作业一词单独扣分。"
+    },
+    {
+      "id": "FINAL-08",
+      "decision": "accepted",
+      "reason": "p137直接把シート定义为タイムシート，p139集计表为进度概览；补上原词可避免中文时间表被读作排期。按镜头内时间与作业指示含义接受译名等价是适当的。",
+      "evidence_pages": [
+        137,
+        139
+      ],
+      "recommended_change": "无需新增必背译名；说明清楚镜头内时间位置与指示即可，不应要求逐字出现帧或格。"
+    },
+    {
+      "id": "FINAL-09",
+      "decision": "accepted",
+      "reason": "p51明确最终在Layout作业时与监督或作监商量；新版把与谁写入问句，消除原题仅显式问阶段、参考另要求对象的提示不对称。",
+      "evidence_pages": [
+        51
+      ],
+      "recommended_change": "可原样采用为开发变体；原画/Layout写法可接受，但若实际声称作打已锁死最终距离，仍与原文相悖。"
+    },
+    {
+      "id": "FINAL-14",
+      "decision": "accepted_with_notes",
+      "reason": "p134确为Layout图像、时间表图像、仕上和背景数据；把已持有材料明确为数码数据、接受完成仕上的セル数据，并不强制品牌，均合理。但原文特殊处理文件有場合によって条件，不能把题中存在特殊要求直接等同于必有某类附加文件。",
+      "evidence_pages": [
+        134
+      ],
+      "recommended_change": "在评分说明补一句：“特殊处理指定数据按该镜头需要核对；明确指出必要时补充即可，不要求断言所有特殊处理镜头均须独立文件或PSD。”"
+    },
+    {
+      "id": "FINAL-20",
+      "decision": "accepted_with_notes",
+      "reason": "显式增加OCR问句，解决阶段二发现的原题未问而必答点要求OCR的问题。p218栏名与p137原画番号/動画番号的解释图注确应区分；核心关系与附带栏名错误分列合理。但这是增加了显式任务的开发变体，不应把新增要求追溯施加给原题。",
+      "evidence_pages": [
+        137,
+        218
+      ],
+      "recommended_change": "保留新版OCR问句，并明确：“仅适用于新版开发验证；原题回答正确说明共用和分栏即可，不因未主动谈OCR扣分。附带错误是否影响核心按它是否改变字段关系判断，而非按错误个数机械决定。”"
+    },
+    {
+      "id": "FINAL-21",
+      "decision": "accepted",
+      "reason": "p139进度统计、p137镜头时间指示及p134实际数据交摄影是三层证据；新版显式要求核对材料并给原文术语，澄清题意而没有引入无源的审批条件。保留开发回归性质合适。",
+      "evidence_pages": [
+        134,
+        137,
+        139
+      ],
+      "recommended_change": "可原样采用；必要特殊处理数据仍保留条件性，且不将同义译名或未复述品牌视为错误。"
+    }
+  ],
+  "artifacts": {
+    "stage1": "work/independent-review-v1/independent-ai-stage1.json",
+    "review": "work/independent-review-v1/independent-ai-review.json",
+    "report": "work/independent-review-v1/independent-ai-review.md"
+  },
+  "open_items": [
+    "FINAL-19 author premise",
+    "FINAL-20 original question/rubric scope",
+    "book-016 overbroad paraphrase"
+  ],
+  "old_answers_rescored": false,
+  "old_results_changed": false,
+  "source_review_status_promoted": false,
+  "limitations": [
+    "独立AI审阅，不是人工复核或独立出版物交叉验证；同一模型家族的相关错误仍可能存在。",
+    "仅17张获准本地原页的目视核对，不是全书阅读、全书翻译审校或OCR逐单元恢复。",
+    "日文、行业术语及表格解释仍建议由懂日文和动画制作的人类审阅者重点复核，尤其FINAL-19的作者边界、book-016的概括范围。",
+    "支持是指在本书与题设范围内有原文或明确合理推论支撑，不代表当前所有工作室实践或任何真实项目状态。",
+    "未看旧模型输出或分数，不作任何重评、成绩增益、效果提升或真实业务验收结论。",
+    "6项修订仍是development_only候选，不能恢复held-out资格；也未覆盖FINAL-19，需单独处理其题面或参考。",
+    "本次不更改来源卡needs_human_review，不赋予human_reviewed。",
+    "未测量人类工时、token用量或全书复核比例，不编造这些数据。"
+  ]
+}

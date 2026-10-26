@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1",
+  "status": "development_reference_revision_2_requires_review",
+  "reference_revision": 2,
+  "review": {
+    "reviewer": "user",
+    "date": "2026-10-26",
+    "basis": "explicit_chat_confirmation",
+    "scope": "revision_1_questions_and_reference_points"
+  },
+  "corrections": [
+    {
+      "question_id": "DEV-08",
+      "date": "2026-10-26",
+      "implemented_by": "codex_ai",
+      "authorization": "explicit_user_approval",
+      "source_pdf_page": 61,
+      "basis": "original_page_visual_check",
+      "from": "必要线条和后续仕上可用性",
+      "to": "必要画稿（画张）齐全和后续仕上可用性",
+      "review_state": "ai_source_checked_not_new_human_review",
+      "historical_pilot_snapshot_changed": false
+    }
+  ],
+  "split": "development_only",
+  "must_not_index": true,
+  "source_id": "animation-basics-book",
+  "source_page_count": 224,
+  "scoring": { "minimum": 0, "maximum": 2, "results": null },
+  "questions": [
+    {
+      "id": "DEV-01",
+      "type": "term_disambiguation",
+      "question": "交接单上出现数字写法的「中1」和汉字写法的「中一」。能否都理解为在两张原画之间增加一张中间画？请分别说明语境。",
+      "source_pages": [165],
+      "required_points": ["区分数字中1的作画含义与汉字中一的制作排期含义", "不能将二者合并为同一画张指示"],
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "DEV-02",
+      "type": "context_reasoning",
+      "question": "制作人员按书中的海外发包语境提出「中一」，对方能否将其当作补一张画而忽略返还时间？应如何理解工作安排？",
+      "source_pages": [165],
+      "required_points": ["属于制作排期，不是画张数", "书中例子为收到 cut 当天开始作业、次日返送"],
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "DEV-03",
+      "type": "context_reasoning",
+      "question": "在原画到动画的作画交接中写「中なし」，是否表示这份工作要当天交付？请说明为什么还需要区分语境。",
+      "source_pages": [166],
+      "required_points": ["作画语境指原画间不加入中割", "同形词还有制作排期用法，不能混为一谈"],
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "DEV-04",
+      "type": "clarification",
+      "question": "我只收到一句「このカットは中なし」。没有其他上下文，能否确定是在要求当天完成？",
+      "source_pages": [166],
+      "required_points": ["不能唯一确定", "解释作画与制作两种可能，并请求确认上下文"],
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "DEV-05",
+      "type": "procedure",
+      "question": "做タップ割り时，是否可以只对齐定位孔就开始描画，而不先做アタリ？请依据资料解释。",
+      "source_pages": [151, 152],
+      "required_points": ["说明定位孔基准与中割的关系", "指出书中要求先取アタリ再进行タップ割り"],
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "DEV-06",
+      "type": "workflow",
+      "question": "按本书的作画检查流程，layout、原画和动画完成后分别经过什么检查，再进入下一阶段？",
+      "source_pages": [56],
+      "required_points": ["layout与原画阶段区分演出检查和作监检查", "动画完成后经过动画检查，之后进入仕上"],
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "DEV-07",
+      "type": "scenario",
+      "question": "角色表情画得完整，但不符合这个镜头应有的情绪和表演意图。这只是线条清理问题吗？应从哪类检查角度处理？",
+      "source_pages": [57, 58, 59],
+      "required_points": ["不是仅靠清线就能解决", "结合演出检查的表演意图以及将修改要求转成作画修正的沟通"],
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "DEV-08",
+      "type": "cross_section",
+      "question": "动画检查能否只核对中割数量就交给仕上？本书还要求关注哪些方面？",
+      "source_pages": [61],
+      "required_points": ["是否按原画意图完成动画", "必要画稿（画张）齐全和后续仕上可用性", "不能只检查中割数量"],
+      "gold_status": "needs_human_review",
+      "reference_revision": 2
+    },
+    {
+      "id": "DEV-09",
+      "type": "scope",
+      "question": "本书中的「二原」是否足以证明所有作品和公司都使用完全相同、严格固定的工序划分？",
+      "source_pages": [167],
+      "required_points": ["介绍从第一原画或rough完成后续原画的基本含义", "保留本书指出的作品/公司范围差异，不推广成统一强制定义"],
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "DEV-10",
+      "type": "insufficient_evidence",
+      "question": "仅依据这份资料，能否确定某未提供内部文件的工作室在2026年项目里强制采用哪种返修审批表？",
+      "source_pages": [224],
+      "required_points": ["资料不足，不能推断具体工作室当前内部规则", "区分书中历史资料与未提供的新项目制度"],
+      "gold_status": "human_reviewed"
+    }
+  ]
+}

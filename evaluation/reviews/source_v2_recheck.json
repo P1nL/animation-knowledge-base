@@ -1,0 +1,253 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-10-26",
+  "source_release": "source-v2",
+  "reviewer": "codex_same_ai",
+  "review_type": "source_first_recheck_after_results_seen",
+  "blind": false,
+  "independent_review_complete": false,
+  "independent_reviewer": null,
+  "pages_viewed": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    61,
+    63,
+    64,
+    133,
+    134,
+    135,
+    136,
+    137,
+    139,
+    150,
+    218,
+    221
+  ],
+  "scope": "22 pending-human cards; selected excerpts and relevant context, not full-page transcription or whole-book review",
+  "corpus_changed": false,
+  "review_status_promoted": false,
+  "provenance_notice": "Chinese explanations and approval/current-policy boundaries may be editorial paraphrase or inference, not verbatim book rules. Absence on these pages is not a whole-book absence claim.",
+  "cards": [
+    {
+      "card_id": "book-013",
+      "pdf_pages": [
+        61
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "61页必要な絵，不是線；仕上前交付检查。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-014",
+      "pdf_pages": [
+        50,
+        51,
+        133
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "50页说明/问答；133页参加者及动画人员条件性出席。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-015",
+      "pdf_pages": [
+        51
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "51页大致参数与Layout时监督/作监协商最终距离。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-016",
+      "pdf_pages": [
+        52,
+        53,
+        63
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "52页留白例外、53页注意重点、63页Layout职责。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-017",
+      "pdf_pages": [
+        54,
+        64
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "54页原画/動画任务，64页能力建议；クリーンアップ并非唯一指動画岗位。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-018",
+      "pdf_pages": [
+        63
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "63页通常作监兼任，工作量/人材/预算影响设置，无定员公式。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-019",
+      "pdf_pages": [
+        64,
+        134
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "64页系列非必设总作监，134页分工依作品。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-020",
+      "pdf_pages": [
+        64,
+        135
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "135页作监指示和耗时原画修正；64页能力已知原画协助。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-021",
+      "pdf_pages": [
+        134
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "134页对应影像替换，不是上传即完成。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-022",
+      "pdf_pages": [
+        134,
+        136
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "134页Layout/时间表/仕上/背景数据及条件性静帧参考；136页历史撮出。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-023",
+      "pdf_pages": [
+        135
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "135页另纸绘制的实际修正画。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-024",
+      "pdf_pages": [
+        136
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "136页岗位PC彩色、工程范围及仕上后错漏涂检查。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-025",
+      "pdf_pages": [
+        137
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "137页動画黑铅笔线与扫描后主线层。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-026",
+      "pdf_pages": [
+        137,
+        150
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "137页シート为タイムシート及共用指示；150页交叉索引。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-027",
+      "pdf_pages": [
+        139
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "139页原画修正的コピー，追加表情/ポーズ参考；不是服装。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-028",
+      "pdf_pages": [
+        135,
+        139
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "139页有色薄纸且演出也使用；无颜色到审批的一一映射。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-029",
+      "pdf_pages": [
+        150
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "150页原句为動きの間隔，不是間合い。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-030",
+      "pdf_pages": [
+        150
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "150页固定工具、孔/孔部纸片两义与补强シール。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-031",
+      "pdf_pages": [
+        139
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "139页决定稿之前、可作临时参考分发。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-032",
+      "pdf_pages": [
+        139
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "139页作业进行状况汇总，与137页镜头内指示区分。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-033",
+      "pdf_pages": [
+        137,
+        218
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "218页字段组与137页用途相符；137页图注不是218页印刷栏名。",
+      "independent_decision": null
+    },
+    {
+      "card_id": "book-034",
+      "pdf_pages": [
+        221
+      ],
+      "status": "core_claims_supported_in_same_ai_recheck",
+      "finding": "221页上下两表分别为合成传票/返修票，无实际业务记录。",
+      "independent_decision": null
+    }
+  ],
+  "priority_question_review_ids": [
+    "FINAL-03",
+    "FINAL-08",
+    "FINAL-09",
+    "FINAL-14",
+    "FINAL-20",
+    "FINAL-21"
+  ],
+  "finding_on_scores": "Prior 48/50/60 is historical single-AI scoring, not independently ratified. Partial-score consistency requires independent adjudication. No retrospective rescore."
+}
