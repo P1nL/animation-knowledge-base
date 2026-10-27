@@ -151,6 +151,8 @@ def workflow(dataset_id, ready=False, exa_key="", web_enabled=True):
                      "score_threshold":0.0,"reranking_enable":True,"reranking_mode":"weighted_score","weights":deepcopy(WEIGHTS)},
                      retry_config=NO_RETRY)
     add("knowledge", knowledge, 900)
+    code("public_evidence", "回答上下文：移除内部管理标签", {"documents":["knowledge","result"]},
+         "public_evidence(documents)", {"result":"array[object]"}, 1050, 250)
     code("route", "默认联网：按时效与证据覆盖触发", {"query":["query","original"], "documents":["knowledge","result"],
          "enabled":["env","WEB_ENABLED"], "configured":["env","EXA_CONFIGURED"]}, "route_web(query, documents, enabled, configured)",
          {"should_search":"boolean","reason":"string","status":"string","request_body":"string","public_query":"string"},1200)
@@ -167,6 +169,7 @@ def workflow(dataset_id, ready=False, exa_key="", web_enabled=True):
         "variables":[["web_text","text"],["local_only","text"]]},2400)
     llm=deepcopy(old_nodes["llm"])
     llm.update(title="结论、证据、推论与不确定边界",retry_config=NO_RETRY)
+    llm["context"]={"enabled":True,"variable_selector":["public_evidence","result"]}
     llm["model"]["completion_params"]={"temperature":0,"max_tokens":2048,"thinking":False}
     llm["prompt_template"][0]["text"]=SYSTEM
     llm["prompt_template"][1]["text"]="{{#query.original#}}"
@@ -177,7 +180,8 @@ def workflow(dataset_id, ready=False, exa_key="", web_enabled=True):
     answer["answer"]="{{#finalize.text#}}"
     add("answer",answer,3300)
     for a,b,h in [("start","query","source"),("query","ready","source"),("ready","knowledge","true"),("ready","blocked","false"),
-        ("knowledge","route","source"),("route","search_gate","source"),("search_gate","exa","true"),("search_gate","local_only","false"),
+        ("knowledge","public_evidence","source"),("public_evidence","route","source"),
+        ("route","search_gate","source"),("search_gate","exa","true"),("search_gate","local_only","false"),
         ("exa","web_text","source"),("web_text","web_join","source"),("local_only","web_join","source"),("web_join","llm","source"),
         ("llm","finalize","source"),("finalize","answer","source")]:
         edge(a,b,h)

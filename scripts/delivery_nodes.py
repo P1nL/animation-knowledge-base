@@ -37,6 +37,27 @@ def term_groups(query):
     return found
 
 
+def public_evidence(documents):
+    """Remove source-card management headers from model input, not the index."""
+    cleaned = []
+    for document in documents:
+        lines = []
+        preamble = True
+        for line in document["content"].splitlines(keepends=True):
+            text = line.strip()
+            if text.startswith("## "):
+                preamble = False
+            if preamble and (
+                re.fullmatch(r"-\s*(?:整理方法|校订状态)\s*[：:].*", text)
+                or text.removeprefix("**").removesuffix("**")
+                == "内部草案：尚待人工校订，不是已确认的知识或评测真值。"
+            ):
+                continue
+            lines.append(line)
+        cleaned.append({**document, "content": "".join(lines)})
+    return {"result": cleaned}
+
+
 def prepare_query(query, ready):
     original = query
     groups = term_groups(query)

@@ -5,6 +5,39 @@ import unittest
 from scripts import delivery_nodes as nodes, prepare_delivery as delivery
 
 
+class PublicEvidenceTests(unittest.TestCase):
+    def test_removes_only_management_preamble_and_preserves_citations(self):
+        header = '# Layout作监\r\n- 条目 ID：book-018\r\n- PDF 页码：63\r\n'
+        body = '\r\n## 必要日文原句\r\n普段は作画監督が兼務する。\r\n## 语境和边界\r\n具体项目仍以项目资料为准。\r\n'
+        content = header + '- 整理方法：ai_assisted_ocr_source_review\r\n- 校订状态：needs_human_review\r\n**内部草案：尚待人工校订，不是已确认的知识或评测真值。**\r\n' + body
+        document = {'content':content,'title':'book-018.md','metadata':{'document_id':'source-id','position':1},'score':0.7}
+        result = nodes.public_evidence([document])['result'][0]
+        self.assertEqual(result['content'],header+body)
+        self.assertEqual({k:v for k,v in result.items() if k!='content'},
+                         {k:v for k,v in document.items() if k!='content'})
+        self.assertEqual(document['content'],content)
+
+    def test_actual_body_text_about_review_is_not_removed(self):
+        content = '# 来源资料\n## 语境和边界\n- 校订状态：这里是在说明真实业务字段。\n内部草案：尚待人工校订，不是已确认的知识或评测真值。\n'
+        self.assertEqual(nodes.public_evidence([{'content':content}])['result'][0]['content'],content)
+        self.assertEqual(nodes.public_evidence([]),{'result':[]})
+
+    def test_model_context_is_cleaned_without_new_retrieval_or_model_calls(self):
+        workflow = delivery.workflow('synthetic-dataset',True,'',True)
+        by_id = {n['id']:n['data'] for n in workflow['graph']['nodes']}
+        edges = {(e['source'],e['target']) for e in workflow['graph']['edges']}
+        self.assertEqual(by_id['llm']['context']['variable_selector'],['public_evidence','result'])
+        self.assertIn(('knowledge','public_evidence'),edges)
+        self.assertIn(('public_evidence','route'),edges)
+        self.assertNotIn(('knowledge','route'),edges)
+        self.assertEqual(by_id['public_evidence']['outputs'],{'result':{'type':'array[object]'}})
+        self.assertEqual(sum(n['type']=='knowledge-retrieval' for n in by_id.values()),1)
+        namespace = {}
+        exec(by_id['public_evidence']['code'],namespace)
+        result = namespace['main']([{'content':'- 校订状态：needs_human_review\n## 正文\n保留正文。'}])
+        self.assertEqual(result['result'][0]['content'],'## 正文\n保留正文。')
+
+
 class AnswerFinalizationTests(unittest.TestCase):
     def evidence(self):
         return nodes.format_web(json.dumps({'results':[

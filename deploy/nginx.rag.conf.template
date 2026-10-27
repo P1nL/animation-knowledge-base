@@ -1,0 +1,50 @@
+# Render placeholders before installing as /etc/nginx/conf.d/rag.conf.
+server {
+    listen 80;
+    server_name rag.semi-overt.com;
+    return 301 https://rag.semi-overt.com$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name rag.semi-overt.com;
+    ssl_certificate __CERTIFICATE__;
+    ssl_certificate_key __CERTIFICATE_KEY__;
+    client_max_body_size 1m;
+    access_log /var/log/nginx/rag.access.log;
+    error_log /var/log/nginx/rag.error.log;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header Connection "";
+    proxy_buffering off;
+    proxy_cache off;
+    proxy_read_timeout 3600s;
+    proxy_send_timeout 3600s;
+
+    location = / { return 302 /chat/__APP_CODE__; }
+    location = /chat/__APP_CODE__ { proxy_pass http://127.0.0.1:18081; }
+    location /_next/static/ { proxy_pass http://127.0.0.1:18081; }
+    location = /_next/image { proxy_pass http://127.0.0.1:18081; }
+    location = /favicon.ico { proxy_pass http://127.0.0.1:18081; }
+    location /logo/ { proxy_pass http://127.0.0.1:18081; }
+    location /images/ { proxy_pass http://127.0.0.1:18081; }
+
+    # Bootstrap calls run before a visitor has a passport.
+    location = /api/system-features { proxy_pass http://127.0.0.1:18081; }
+    location = /api/webapp/access-mode {
+        if ($arg_appCode != "__APP_CODE__") { return 404; }
+        proxy_pass http://127.0.0.1:18081;
+    }
+    # Dify validates passports and conversation ownership; only this app
+    # can obtain a passport through the public domain.
+    location /api/ {
+        if ($http_x_app_code != "__APP_CODE__") { return 404; }
+        proxy_pass http://127.0.0.1:18081;
+    }
+    location /api/files/ { return 404; }
+    location /api/remote-files/ { return 404; }
+    # Console, service API, original files and other apps remain private.
+    location / { return 404; }
+}
