@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-10-27",
+  "reviewer": "user",
+  "reviewer_type": "human",
+  "basis": "explicit_chat_confirmation",
+  "confirmation": "用户在材料清单后明确表示已审核完成。记录该确认，不推测审核方法或工时。",
+  "source_review": {
+    "parent_release": "source-v3",
+    "current_release": "source-v4",
+    "newly_confirmed_ids": [
+      "book-013",
+      "book-014",
+      "book-015",
+      "book-016",
+      "book-017",
+      "book-018",
+      "book-019",
+      "book-020",
+      "book-021",
+      "book-022",
+      "book-023",
+      "book-024",
+      "book-025",
+      "book-026",
+      "book-027",
+      "book-028",
+      "book-029",
+      "book-030",
+      "book-031",
+      "book-032",
+      "book-033",
+      "book-034"
+    ],
+    "previously_confirmed_ids": [
+      "book-001",
+      "book-002",
+      "book-003",
+      "book-004",
+      "book-005",
+      "book-006",
+      "book-007",
+      "book-008",
+      "book-009",
+      "book-010",
+      "book-011",
+      "book-012"
+    ],
+    "content_changes": false
+  },
+  "reference_review": {
+    "parent_dataset": "final-v1.2-review",
+    "current_dataset": "final-v1.3-human-reviewed",
+    "question_ids": [
+      "FINAL-01",
+      "FINAL-02",
+      "FINAL-03",
+      "FINAL-04",
+      "FINAL-05",
+      "FINAL-06",
+      "FINAL-07",
+      "FINAL-08",
+      "FINAL-09",
+      "FINAL-10",
+      "FINAL-11",
+      "FINAL-12",
+      "FINAL-13",
+      "FINAL-14",
+      "FINAL-15",
+      "FINAL-16",
+      "FINAL-17",
+      "FINAL-18",
+      "FINAL-19",
+      "FINAL-20",
+      "FINAL-21",
+      "FINAL-22",
+      "FINAL-23",
+      "FINAL-24",
+      "FINAL-25",
+      "FINAL-26",
+      "FINAL-27",
+      "FINAL-28",
+      "FINAL-29",
+      "FINAL-30"
+    ],
+    "pilot_reference": "DEV-08 revision 2",
+    "content_changes": false
+  },
+  "limits": [
+    "不是全书逐字审读或所有原始OCR已校订的声明",
+    "不改写历史生成来源、评分者、分数或独立性",
+    "不授予额外模型调用、索引重建或公开完整PDF/页图的权限",
+    "第三方网页及今后新增修改内容不自动成为已人审材料"
+  ],
+  "display_policy": {
+    "current_materials": "已人工审核",
+    "official_only_filter_required": false,
+    "pending_software_fixes": [
+      "联网引用补齐对应网址",
+      "证据不足时避免无条件否定"
+    ]
+  }
+}

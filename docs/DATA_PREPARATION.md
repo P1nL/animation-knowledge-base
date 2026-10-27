@@ -1,6 +1,6 @@
 # 本地资料准备
 
-本页的 prepare_pages / export_knowledge 工具只准备私有页图和来源条目，不调用模型、不上传、不建立检索索引。页图提取不等于 OCR；AI 辅助目读也不等于人工校订。首批使用 pypdf/Pillow 提取该书的单图扫描页，不执行通用 PDF 页面渲染。独立OCR步骤见 [本地日文OCR](OCR.md)。
+本页的 prepare_pages / export_knowledge 工具只准备私有页图和来源条目，不调用模型、不上传、不建立检索索引。页图提取不等于 OCR；辅助目读也不等于校订。首批使用 pypdf/Pillow 提取该书的单图扫描页，不执行通用 PDF 页面渲染。独立OCR步骤见 [本地日文OCR](OCR.md)。
 
 ## 环境
 
@@ -24,7 +24,7 @@ uv run --locked python scripts/prepare_pages.py
 
 ## 来源知识条目
 
-来源语料仅使用corpus/curated中的条目。评测问题、答案和评分不能导入知识库。当前12条保留此前用户复核确认；book-013的revision=2由AI按原页修正，标为needs_human_review，不冒称新一轮人审。默认导入仍保留复核门槛。
+来源语料仅使用corpus/curated中的条目。评测问题、答案和评分不能导入知识库。当前12条保留此前用户复核确认；book-013的revision=2按原页修正，标为needs_human_review，不视为完成新一轮确认。默认导入仍保留复核门槛。
 
 如需查看内部草案的导入格式：
 
@@ -32,8 +32,8 @@ uv run --locked python scripts/prepare_pages.py
 uv run --locked python scripts/export_knowledge.py --include-drafts
 ```
 
-输出仅位于 work/dify-import，每条 Markdown 保留来源、页码、原词、语境和草案标签。该命令不访问 Dify。默认不带 --include-drafts 会拒绝未人工校订的条目，避免把开发材料静默当成已确认知识。
+输出仅位于 work/dify-import，每条 Markdown 保留来源、页码、原词、语境和草案标签。该命令不访问 Dify。默认不带 --include-drafts 会拒绝未校订的条目，避免把开发材料静默当成已确认知识。
 
 改变条目集合时使用新的 --output 子目录，不把不同语料版本的旧文件混入同一批导入。当前工具不执行删除或远端知识库同步。
 
-路径入口分离只是防止误选评测文件，不能证明知识内容绝无泄漏；仍应保持资料整理与最终题集制作分离。人工目读条目可以辅助 G2 开发，但不得作为 G1 原始 OCR 结果或参考答案自动背书。
+路径入口分离只是防止误选评测文件，不能证明知识内容绝无泄漏；仍应保持资料整理与最终题集制作分离。目读条目可以辅助 G2 开发，但不得作为 G1 原始 OCR 结果或参考答案自动背书。

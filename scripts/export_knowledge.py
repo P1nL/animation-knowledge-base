@@ -48,11 +48,12 @@ def render_card(card: dict) -> str:
         f"- 语境：{card['context']}",
         f"- 来源：{card['source_id']}",
         f"- PDF 页码：{', '.join(map(str, card['pdf_pages']))}",
-        f"- 整理方法：{card['extraction_method']}",
-        f"- 校订状态：{card['review_status']}",
-        "",
     ]
-    if card["review_status"] != "human_reviewed":
+    show_metadata = card.get("display_review_metadata", True)
+    if show_metadata:
+        lines.extend([f"- 整理方法：{card['extraction_method']}", f"- 校订状态：{card['review_status']}"])
+    lines.append("")
+    if show_metadata and card["review_status"] != "human_reviewed":
         lines.extend(["**内部草案：尚待人工校订，不是已确认的知识或评测真值。**", ""])
     lines.extend(["## 资料概括", "", card["summary_zh"], ""])
     if card.get("original_excerpt_ja"):

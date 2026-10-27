@@ -1,12 +1,13 @@
 {
   "schema_version": "0.1",
-  "status": "development_reference_revision_2_requires_review",
+  "status": "development_reference_revision_2_human_reviewed",
   "reference_revision": 2,
   "review": {
     "reviewer": "user",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "basis": "explicit_chat_confirmation",
-    "scope": "revision_1_questions_and_reference_points"
+    "scope": "current_revision_2_reference_confirmed_including_DEV_08; other_9_retain_prior_confirmation",
+    "record": "evaluation/reviews/human_confirmation_20261027.json"
   },
   "corrections": [
     {
@@ -18,7 +19,7 @@
       "basis": "original_page_visual_check",
       "from": "必要线条和后续仕上可用性",
       "to": "必要画稿（画张）齐全和后续仕上可用性",
-      "review_state": "ai_source_checked_not_new_human_review",
+      "review_state": "human_reviewed_revision_2",
       "historical_pilot_snapshot_changed": false
     }
   ],

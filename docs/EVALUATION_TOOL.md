@@ -1,5 +1,7 @@
 # 已保存回答与评分的离线汇总工具
 
+> 当前材料与展示约定见[材料说明](HUMAN_REVIEW_COMPLETION.md)。本文保留原阶段的版本、处理过程和评测结果，不追溯改写分数。
+
 ## 用途与当前边界
 
 `scripts/summarize_evaluation.py` 是 Python 3.12 标准库 CLI，只读取问题清单、已保存回答和显式提供的评分，输出 Markdown 汇总。无需安装第三方依赖，不访问网络、不运行模型、不调用付费 API，也不读取或修改知识语料。
@@ -8,7 +10,7 @@
 
 - dataset split 为 `development_only`。
 - dataset status 为 `draft_requires_source_and_human_review`。
-- 每题 gold status 都是 `draft`，尚未完成人工复核。
+- 每题 gold status 都是 `draft`，尚未完成复核。
 
 **pilot 仅用于开发预实验，不能称作正式测试或 held-out 结果。** 即使回答和评分全部补齐，这一性质也不会改变。工具保留这些标签及警告，不修改既有评估协议、pilot、参考要点或评分规则。
 
@@ -85,8 +87,8 @@ python -B scripts/summarize_evaluation.py --questions evaluation/pilot.json --ra
 ## 证据边界
 
 - **不评分**：不根据关键词、引用数量或模型裁判推断正确性。任何非空回答都只计入回答覆盖数，不能自动得到分数。
-- **不惩罚 G0 缺引文**：所有组都原样汇总输入 score；citations 不参与计分。输入评分者也应遵守既有协议，不因 G0 无检索引用而扣答案分。本工具无法判断人工输入分数背后的评分理由。
-- **不宣称真实审核**：split、status、gold_status 和 reviewer 仅复述输入。非空 reviewer 不证明真实人工审核，更不能自动改变 gold 的草案状态。
+- **不惩罚 G0 缺引文**：所有组都原样汇总输入 score；citations 不参与计分。输入评分者也应遵守既有协议，不因 G0 无检索引用而扣答案分。本工具无法判断输入分数背后的评分理由。
+- **不宣称真实审核**：split、status、gold_status 和 reviewer 仅复述输入。非空 reviewer 不证明真实审核，更不能自动改变 gold 的草案状态。
 - **不推断缺失结果或失败原因**：部分完成仅代表对应子集；notes 不被自动扩写，引用支持程度等其他维度仍需实际证据和单独评审。
 - **不作统计显著声明**：配对差值只是描述性结果，不输出 p 值、置信区间、预设提升或全体准确率。
 - **工具测试不等于实验结果**：下述合成测试只验证汇总逻辑，不说明知识库、任何模型或任何题目的实际表现。

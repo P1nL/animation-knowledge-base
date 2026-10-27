@@ -1,0 +1,816 @@
+{
+  "schema_version": "0.3",
+  "dataset_version": "final-v1.3-human-reviewed",
+  "split": "development_only",
+  "status": "human_reviewed_development_only",
+  "frozen": false,
+  "source_release": "source-v4",
+  "source_scope_file": "corpus/releases/source-v4/scope.json",
+  "must_not_index": true,
+  "must_not_use_for_tuning": true,
+  "reference_author": "codex_ai",
+  "reference_review": "User confirmed review of current questions, reference points and scoring rules; original author provenance retained.",
+  "change_policy": "Development/regression revision after old results were observed. Preserve all older inputs, reviews and scores; do not retrospectively map old answers onto revised questions.",
+  "scoring": {
+    "minimum": 0,
+    "maximum": 2,
+    "zero": "Main conclusion or key concept is wrong, or a critical forbidden claim defeats the answer.",
+    "one": "Main direction is reasonable but a required point is missing, misstated, or contradicted.",
+    "two": "All required points are substantively met, relevant scope handled, and no critical false claim. Exact wording is not required.",
+    "g0_missing_citations_penalty": false,
+    "insufficient_evidence_rule": "A supported refusal/clarification is correct for an unanswerable requested detail; do not refuse the answerable definitions or distinctions wholesale.",
+    "results": null,
+    "scope": "Human-reviewed rules for final-v1.3 only; unchanged scoring content inherited from final-v1.2-review. Do not retrospectively rescore or relabel final-v1 answers.",
+    "semantic_equivalence": "Accept equivalent names and paraphrases, not exact wording. Do not penalize G0 for missing source citations.",
+    "secondary_error_policy": "Record incidental pronunciation, wording and citation issues separately. Reduce core score only when they contradict or obscure a required distinction; identify the affected point."
+  },
+  "created_date": "2026-10-27",
+  "derived_from": "final-v1.2-review",
+  "base_results_already_observed": true,
+  "held_out_eligible": false,
+  "purpose": "Human-reviewed development/regression candidate; not a new held-out benchmark",
+  "independent_review": {
+    "status": "not_claimed",
+    "reviewer": null,
+    "scope": "User confirmation is not claimed as a blinded independent regrading of historical answers."
+  },
+  "chat_calls_authorized": false,
+  "model_runs_at_creation": 0,
+  "changed_question_ids": [
+    "FINAL-01",
+    "FINAL-03",
+    "FINAL-08",
+    "FINAL-09",
+    "FINAL-14",
+    "FINAL-19",
+    "FINAL-20",
+    "FINAL-21"
+  ],
+  "original_dataset": "final-v1",
+  "changed_from_parent_question_ids": [],
+  "known_review_findings_implemented": true,
+  "remaining_review_requirements": [],
+  "questions": [
+    {
+      "id": "FINAL-01",
+      "type": "term_disambiguation",
+      "question": "有人把作打ち解释为把镜头编号分给原画人员后散会。按本书，这个解释缺少什么核心活动？通常涉及哪些角色，動画职种人员是否一律必须参加？",
+      "source_pages": [
+        50,
+        51,
+        133
+      ],
+      "source_card_ids": [
+        "book-014",
+        "book-015"
+      ],
+      "required_points": [
+        "作打是原画作业打合，监督或担当演出说明镜头内容并接受原画提问商量，不只是分配编号",
+        "说明演出、作监、原画和担当制作等参与者；動画检查与動画职种人员是否参加依作品而定"
+      ],
+      "forbidden_claims": [
+        "把作打仅定义为分配镜头编号",
+        "认定所有项目必须让全部動画职种人员参加"
+      ],
+      "clarify_or_refuse_when": "若要求核定某项目实际到会名单，需要该项目记录；仍应回答书中活动与角色范围。",
+      "reference_answer": "核心是就原画作业说明镜头内容、理解意图并沟通，而非只分发编号。书中列出演出、作监、原画、担当制作，動画检查与動画职种人员可按作品情况参加，不能推成一律必到。",
+      "gold_status": "human_reviewed",
+      "accepted_equivalents": [
+        "动画人员在此须指日文職種動画，不泛指含原画等岗位的全体动画师。"
+      ],
+      "revision_note": "明确動画职种，避免动画人员泛称。",
+      "amendment": {
+        "date": "2026-10-26",
+        "basis": "evaluation/reviews/independent_ai_v1.json",
+        "implemented_by": "codex_ai",
+        "parent_dataset": "final-v1.1-review"
+      }
+    },
+    {
+      "id": "FINAL-02",
+      "type": "term_disambiguation",
+      "question": "交接说明中，一位人员协调多个各话作监，另一位只负责某一集的作画水准。总作画监督与各话作监是否指同一个职责范围？只要是系列作品就一定设置前者吗？",
+      "source_pages": [
+        64,
+        134
+      ],
+      "source_card_ids": [
+        "book-019"
+      ],
+      "required_points": [
+        "区分总作监对多个作监的统领/监督与各话作监负责某一集",
+        "本书明确系列作品也不一定设置总作监，实际设置依作品"
+      ],
+      "forbidden_claims": [
+        "两种称呼职责范围完全相同",
+        "所有系列作品必设总作监"
+      ],
+      "clarify_or_refuse_when": "具体人员身份或签核权须看项目资料，不由职责描述猜人名。",
+      "reference_answer": "两者范围不同：总作监监督协调多个作监，各话作监负责某一集。本书并未要求所有系列必设总作监，不能只凭作品是系列就断定有该职位。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-03",
+      "type": "term_disambiguation",
+      "question": "物流单上写着修正用紙已送到，制作人员据此把作監修正标为完成。请分别说明这两个词在本书中的具体所指，以及仅有这条到货信息能证明什么、不能证明什么。",
+      "source_pages": [
+        135,
+        139
+      ],
+      "source_card_ids": [
+        "book-023",
+        "book-028"
+      ],
+      "required_points": [
+        "区分供修正使用的纸张材料与实际绘制的修正画/修正稿，不把具体修正内容等同于纸张或审批手续",
+        "到货只支持材料送达，不能证明实际修正已完成或通过检查"
+      ],
+      "forbidden_claims": [
+        "空白纸到货等于实际修正完成"
+      ],
+      "clarify_or_refuse_when": "是否已经完成具体修正须看修正画和交接/检查记录。",
+      "reference_answer": "不能互换。修正用纸是供修正使用的材料，作监修正是另纸绘制的实际修正内容。到货至多说明材料送达，不能据此认定画稿修正或检查已经完成。",
+      "gold_status": "human_reviewed",
+      "revision_note": "明确具体所指；修正稿是可接受的等价表达，不按是否逐字复述定义扣分。",
+      "accepted_equivalents": [
+        "实际修正画、修正稿、另纸绘制的修正内容均可；不要求逐字复述质量提高或角色统一。",
+        "提到修正作业不自动扣分，须看是否清楚交代实际绘制内容；纸张到货不等于该内容已完成。"
+      ]
+    },
+    {
+      "id": "FINAL-04",
+      "type": "term_disambiguation",
+      "question": "一包资料是历次原画修正的复印件，用于追加角色参考；另一份原稿还在等监督检查，先临时发给大家。修正集与準備稿应怎样区分，能否仅因已经分发就把后者当成决定稿？",
+      "source_pages": [
+        139
+      ],
+      "source_card_ids": [
+        "book-027",
+        "book-031"
+      ],
+      "required_points": [
+        "修正集汇集已有原画修正，可作补充表情/姿势或较新角色参考",
+        "准备稿是决定稿之前的原稿，可临时参考；分发不自动等于决定稿"
+      ],
+      "forbidden_claims": [
+        "已分发就等于正式定稿",
+        "把修正集定义为空白修正纸"
+      ],
+      "clarify_or_refuse_when": "具体文件是否转为决定稿须有确认状态，不能从收到文件推断。",
+      "reference_answer": "修正集是汇集修正内容的参考资料；准备稿是尚未成为决定稿的原稿。临时分发只是提供参考，不自动改变定稿或审批状态。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-05",
+      "type": "term_disambiguation",
+      "question": "有人说撮入れ只是撮出し的另一种写法，都只是在摄影前清点赛璐珞片。结合本书的赛璐珞与数码语境，这个解释是否充分？",
+      "source_pages": [
+        134,
+        136
+      ],
+      "source_card_ids": [
+        "book-022"
+      ],
+      "required_points": [
+        "撮出是书中赛璐珞时期摄影前的素材齐备/长度/组合等检查",
+        "撮入是备齐镜头数据移交摄影，书中描述数码环境中流程变化；不能只当同义字形"
+      ],
+      "forbidden_claims": [
+        "把撮入仅解释为清点赛璐珞片",
+        "将书中历史变化无条件推广到所有当前工作室"
+      ],
+      "clarify_or_refuse_when": "若现场用词不同，应询问年代和实际交接对象，不强行套用。",
+      "reference_answer": "不充分。撮出侧重历史素材交摄影前的检查；撮入侧重镜头数据备齐后交给摄影。二者有时代与工作对象的区别，不能仅视为同义写法。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-06",
+      "type": "term_disambiguation",
+      "question": "预算文件把扫描、彩色、特效和检查计入仕上工程；一位工作人员说自己的仕上岗位主要是在PC上彩色。这两种说法必有一种错误吗？应怎样区分？",
+      "source_pages": [
+        136
+      ],
+      "source_card_ids": [
+        "book-024"
+      ],
+      "required_points": [
+        "区分仕上作为岗位与作为工程的不同范围",
+        "岗位可以指PC彩色人员，工程范围还可涵盖色指定、扫描、特效和检查，二者不必矛盾"
+      ],
+      "forbidden_claims": [
+        "仕上工程只能等于涂色这一个动作",
+        "所有当前项目必须采用完全相同范围"
+      ],
+      "clarify_or_refuse_when": "具体预算职责范围应以项目文件为准。",
+      "reference_answer": "不一定矛盾。岗位用法可指PC彩色人员，而工程用法的范围更广。需先辨明讨论的是个人职责还是整段工序，再核对项目划分。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-07",
+      "type": "term_disambiguation",
+      "question": "交接要求从用过的动画纸上切下タップ穴，拿来补强。为什么这里不应简单理解成重新打三个孔？这个词在本页有哪些相关用法？",
+      "source_pages": [
+        150
+      ],
+      "source_card_ids": [
+        "book-030"
+      ],
+      "required_points": [
+        "タップ穴既可指动画纸上的定位孔，也可指从旧纸切下的孔部纸片",
+        "本场景的切下/补强对象是孔部材料，不是重新打孔或重做动作设计"
+      ],
+      "forbidden_claims": [
+        "把所有タップ穴一律理解成打孔动作"
+      ],
+      "clarify_or_refuse_when": "材料厚度和具体补强规格资料未给出时，不应编造数值。",
+      "reference_answer": "此处指切下带孔部分作为材料。本页除纸上的三个定位孔外，还把供补强或贴接的孔部纸片称为タップ穴，应结合切下、使用旧纸和补强的语境识别。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-08",
+      "type": "term_disambiguation",
+      "question": "制作把记录谁持有多少cut、预计总枚数的集計表交给摄影，认为它足以替代镜头的シート（タイムシート）。两种资料各记录什么，为什么不能直接互换？",
+      "source_pages": [
+        137,
+        139
+      ],
+      "source_card_ids": [
+        "book-026",
+        "book-032"
+      ],
+      "required_points": [
+        "集计表汇总作品或各集任务与进度，例如持有cut和预计枚数",
+        "シート是时间表，记录镜头内セルワーク、相机及摄影效果等作业指示，进度汇总不替代这些内容"
+      ],
+      "forbidden_claims": [
+        "进度统计表可以直接替代镜头时间表"
+      ],
+      "clarify_or_refuse_when": "具体文件名可能不同，应以实际字段和用途判断。",
+      "reference_answer": "集计表关注任务进度，シート关注镜头内部时间与作业指示。即使统计表列出了镜头，它也未必含摄影所需的时间表信息，因此不能直接替代。",
+      "gold_status": "human_reviewed",
+      "revision_note": "明确タイムシート，按镜头内时间指示的含义评分。",
+      "accepted_equivalents": [
+        "时间表、曝光表、摄影传票等名称可等价，关键是镜头内帧/时间位置与作业指示。",
+        "称作作业指示书本身不扣分；应检查是否说明时间/格位，或是否明确误当交付排程。"
+      ]
+    },
+    {
+      "id": "FINAL-09",
+      "type": "scenario",
+      "question": "作打记录只写了角色歩く。原画需要知道快慢、步幅和从哪里走到哪里，有人又要求会议上立即锁死最终移动距离。按资料，哪些应先讨论，最终距离在哪个阶段、与谁商量确定？",
+      "source_pages": [
+        51
+      ],
+      "source_card_ids": [
+        "book-015"
+      ],
+      "required_points": [
+        "步行的快慢、步幅、起终点等应在作打中大致沟通，而不是只靠歩く一词确定",
+        "最终移动距离在后续Layout作业中与监督或作监商量确定"
+      ],
+      "forbidden_claims": [
+        "歩く一词足以确定全部数值",
+        "必须在作打中无条件固定最终距离"
+      ],
+      "clarify_or_refuse_when": "具体数值需镜头意图和后续Layout信息。",
+      "reference_answer": "先就步行方式和大致范围沟通；本书将最终移动距离的确定放在之后的Layout阶段，与监督或作监协商。不能仅凭一个动词填出数值。",
+      "gold_status": "human_reviewed",
+      "revision_note": "将参考要求的协商对象明确写入题面。",
+      "accepted_equivalents": [
+        "Layout、レイアウト、构图作业可等价；不能因原画/Layout这一写法本身扣分。",
+        "先大致讨论，最终在Layout阶段与监督或作监商量；新版明确要求回答协商对象。"
+      ]
+    },
+    {
+      "id": "FINAL-10",
+      "type": "scenario",
+      "question": "一张Layout刻意压缩人物视线前的空间来表达受困感，检查者仅因没有留白就判定必须退回。按资料，是否可以只靠这一条惯例下结论？还应核对什么？",
+      "source_pages": [
+        52,
+        53,
+        63
+      ],
+      "source_card_ids": [
+        "book-016"
+      ],
+      "required_points": [
+        "视线前留白是常见基础而非无例外的硬性标准，可以为表达意图调整",
+        "应核对镜头要让观众看到什么及实际表达效果；仅凭文字描述不能宣布具体画面必然合格"
+      ],
+      "forbidden_claims": [
+        "无留白必定错误",
+        "只要声称有意图就必定合格"
+      ],
+      "clarify_or_refuse_when": "判断具体画面需看实际Layout及演出意图。",
+      "reference_answer": "不能只据留白惯例一票否决，也不能因自称刻意就自动放行。应结合实际画面、观众注意重点和演出表达判断，本书允许打破惯例但没有给这个镜头唯一结论。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-11",
+      "type": "scenario",
+      "question": "项目名单没有单独列レイアウト作監，助理据此准备删除Layout检查环节。按书中的岗位说明，这个推断是否成立？",
+      "source_pages": [
+        63
+      ],
+      "source_card_ids": [
+        "book-018"
+      ],
+      "required_points": [
+        "独立岗位是否设置与检查任务是否存在不同，书中通常可由作监兼任",
+        "不能仅因名单无独立职称删除检查，应确认项目中的实际承担者和安排"
+      ],
+      "forbidden_claims": [
+        "未列独立Layout作监就无需Layout检查"
+      ],
+      "clarify_or_refuse_when": "实际由谁负责需项目分工，不能猜测人名。",
+      "reference_answer": "不成立。书中说明Layout检查常由作监兼任，独立职称缺席不等于任务消失。应核对谁承担检查，而非直接删除。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-12",
+      "type": "scenario",
+      "question": "一名原画完成自己的部分后被安排做作監補，有人说临时加入就只能做简单清线、不必接受作监指示。按资料，应如何判断这项协助工作的内容和安排？",
+      "source_pages": [
+        64,
+        135
+      ],
+      "source_card_ids": [
+        "book-020"
+      ],
+      "required_points": [
+        "书中存在能力已知的原画在完成任务后协助作监的安排，不能从加入时间推断只能做简单工作",
+        "作监补接受作监指示，主要可承担耗时的原画修正；不据称呼推断独立审批权"
+      ],
+      "forbidden_claims": [
+        "作监补无需作监指示",
+        "临时加入必定只能清线"
+      ],
+      "clarify_or_refuse_when": "具体修改范围与权限需看担当指示。",
+      "reference_answer": "这种协助安排在书中有说明，关键是能力和分工而非是否临时加入。作监补按作监指示处理修正，常包含耗时的原画修改，不能理解成脱离指示的简单清线岗位。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-13",
+      "type": "scenario",
+      "question": "返修画稿已经上传，但用于检查的rush里仍显示旧的线摄影像。制作能否仅凭上传记录把差し替え标成完成？按资料实际需要核对什么？",
+      "source_pages": [
+        134
+      ],
+      "source_card_ids": [
+        "book-021"
+      ],
+      "required_points": [
+        "差替的对象是对应部分的影像替换，如线摄换成上色或返修镜头换成修正版",
+        "修正画稿上传不等于rush中相应影像已被替换，应核对实际镜头版本"
+      ],
+      "forbidden_claims": [
+        "上传任意修正材料即证明影像替换完成"
+      ],
+      "clarify_or_refuse_when": "具体替换状态须查看当前交付或影像版本。",
+      "reference_answer": "不能。上传可作为材料到达的信息，但差替要求相应影像真正换成新版本，应核对rush里的对应镜头而非仅看上传记录。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-14",
+      "type": "scenario",
+      "question": "准备撮入れ时只找到了タイムシート图像和背景数据，且这个镜头另有特别画面处理要求。按本书的数码数据移交说明，还应核对哪些数据类别？能否直接宣布素材已齐？",
+      "source_pages": [
+        134
+      ],
+      "source_card_ids": [
+        "book-022"
+      ],
+      "required_points": [
+        "书中撮入清单还包含Layout图像和仕上数据，不能只看时间表与背景",
+        "按该镜头实际需要核对表达特殊处理要求的参考或指定数据，不由存在特殊要求推断所有镜头均须独立附加文件；现有两类数据不足以直接判齐"
+      ],
+      "forbidden_claims": [
+        "只要有时间表和背景就必定足够",
+        "任何镜头都必须使用同一种现代软件文件",
+        "只要存在特殊处理就必定必须额外交一份独立文件或PSD"
+      ],
+      "clarify_or_refuse_when": "实际特殊处理文件规格应向项目确认，不猜文件名。",
+      "reference_answer": "还要核对Layout图像和完成仕上的图像数据，并按该镜头实际需要核对特殊处理参考或指定数据。现有两类材料不足以直接判齐；不要求所有特殊处理镜头都另交独立文件或PSD，具体承载方式与格式以项目要求为准。",
+      "gold_status": "human_reviewed",
+      "revision_note": "落实独立复核附注，保留特殊处理数据的条件性和承载方式弹性。",
+      "accepted_equivalents": [
+        "仕上数据、完成上色的图像数据、完成仕上的セル数据可视语境等价；单纯色指定不是成色图像。",
+        "特殊处理参考/静帧指定数据可等价，不要求某一软件品牌。",
+        "提及历史检查不自动降分；只有强制套用或替代数码所需数据时才影响核心分。",
+        "特殊处理指定数据按该镜头需要核对，说明必要时补充即可；不得强制独立文件或PSD。"
+      ],
+      "amendment": {
+        "date": "2026-10-26",
+        "basis": "evaluation/reviews/independent_ai_v1.json",
+        "implemented_by": "codex_ai",
+        "parent_dataset": "final-v1.1-review"
+      }
+    },
+    {
+      "id": "FINAL-15",
+      "type": "scenario",
+      "question": "一个镜头在動画阶段已检查通过，完成彩色后却出现漏涂。有人以已有動画检查记录为由省略仕上検査，这符合书中两个检查环节的区别吗？",
+      "source_pages": [
+        61,
+        136
+      ],
+      "source_card_ids": [
+        "book-013",
+        "book-024"
+      ],
+      "required_points": [
+        "動画检查位于向仕上交付前，仕上检查面对仕上完成后的图像",
+        "错涂漏涂属于仕上检查关注内容，前一道检查通过不能替代后一道检查"
+      ],
+      "forbidden_claims": [
+        "動画检查通过可自动免除成色后的检查"
+      ],
+      "clarify_or_refuse_when": "可解释流程区别，但不能在未见画面时定位全部漏涂位置。",
+      "reference_answer": "不符合。两者处于不同阶段，彩色之后的错涂漏涂需要仕上检查关注，前面的動画检查不能保证后来产生的成色图没有问题。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-16",
+      "type": "scenario",
+      "question": "监督检查延期，制作先把準備稿发进工作群。接收者想删去待确认说明并把文件名改成決定稿，理由是大家都已收到。按资料应如何处理？",
+      "source_pages": [
+        139
+      ],
+      "source_card_ids": [
+        "book-031"
+      ],
+      "required_points": [
+        "准备稿可以在决定稿较晚时作临时参考分发，分发不改变其未定稿性质",
+        "应保留临时/待确认状态并核对正式决定信息，不能仅因已收到改称决定稿"
+      ],
+      "forbidden_claims": [
+        "分发即自动定稿",
+        "准备稿在任何情况下都不能供工作人员参考"
+      ],
+      "clarify_or_refuse_when": "具体可用于哪些作业须确认项目指示，不能擅自扩大使用范围。",
+      "reference_answer": "应保留其临时参考身份。书中允许先分发准备稿，但这不证明监督检查完成；改成决定稿需要正式确认，不能由收件事实替代。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-17",
+      "type": "scenario",
+      "question": "长系列的角色画法已有变化，制作希望给原画补充新的表情和姿势参考，只再次寄出一叠空白彩色修正纸是否足够？书中哪类资料更贴近这个需求？",
+      "source_pages": [
+        139
+      ],
+      "source_card_ids": [
+        "book-027",
+        "book-028"
+      ],
+      "required_points": [
+        "空白修正用纸不包含已有修正内容，不能替代角色参考资料",
+        "修正集汇集原画修正，可用于追加表情/姿势或较新角色参考"
+      ],
+      "forbidden_claims": [
+        "空白彩纸本身能承载已经完成的角色修正参考"
+      ],
+      "clarify_or_refuse_when": "哪一版参考有效仍需项目确认，不能自动认定收到的所有修正都已生效。",
+      "reference_answer": "不够。这个需求更适合包含实际修正内容的修正集，而非空白修正纸。应提供相应参考内容并明确适用版本。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-18",
+      "type": "scenario",
+      "question": "修改意见写タイミングを直す，排程人员只调整了交付日期，镜头动作的时机和间隔保持原样。按该词条，能认为修改意见已经落实吗？",
+      "source_pages": [
+        137,
+        150
+      ],
+      "source_card_ids": [
+        "book-026",
+        "book-029"
+      ],
+      "required_points": [
+        "本词条タイミング指动作时机/间隔，不是单纯交付排期",
+        "仅改交付日不能证明动作调整已落实，应确认动作要求及相应作业指示；不能凭空指定帧数"
+      ],
+      "forbidden_claims": [
+        "交期改动必然等于动作Timing改好"
+      ],
+      "clarify_or_refuse_when": "具体时机和帧数修改需镜头内容及意图。",
+      "reference_answer": "不能这样认定。需要核对动作的时机、间隔及承载这些指示的资料是否改变；交付日期属于另一层信息，不能替代动作调整。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-19",
+      "type": "cross_section",
+      "question": "整理交接物时有三件东西：未用过的黄色薄纸、作画监督在原画上叠另纸绘制的修正画、历次原画修正复印成册的资料。请分别对应书中的名称和用途，为什么不能只按颜色归成同一类？",
+      "source_pages": [
+        135,
+        139
+      ],
+      "source_card_ids": [
+        "book-023",
+        "book-027",
+        "book-028"
+      ],
+      "required_points": [
+        "分别对应修正用纸、题设已明确由作画监督绘制的作监修正、修正集，区分材料、具体修正内容和内容集合",
+        "颜色不能代替内容/用途区分，也不能证明审批状态"
+      ],
+      "forbidden_claims": [
+        "三者仅因纸色相同就完全同义"
+      ],
+      "clarify_or_refuse_when": "本题已经明确第二件由作画监督绘制，无需猜测其作者；对未给出的具体身份、批准状态仍不推断。若实际交接没有该作者前提，不能仅凭另纸修正画就认定为作监修正。",
+      "reference_answer": "空白薄纸是修正用纸；题设明确由作画监督另纸绘制的修正画对应作监修正；汇集原画修正的复印资料对应修正集。应按作者已知前提、实际内容和用途判断，纸色不能证明类别或批准状态。",
+      "gold_status": "human_reviewed",
+      "accepted_equivalents": [
+        "依题设明确的作监作者前提将第二件对应作监修正；不把所有另纸修正都当成作监所作。",
+        "修正集可称汇集原画修正的复印参考资料，不要求所有修正集必须装订成册。"
+      ],
+      "revision_note": "补明作画监督作者前提，解决原题证据不足而无条件要求作监修正的问题。",
+      "amendment": {
+        "date": "2026-10-26",
+        "basis": "evaluation/reviews/independent_ai_v1.json",
+        "implemented_by": "codex_ai",
+        "parent_dataset": "final-v1.1-review"
+      }
+    },
+    {
+      "id": "FINAL-20",
+      "type": "cross_section",
+      "question": "タイムシート里有アクション、セル、カメラ等不同栏，有人因此认为它只给摄影看，動画和仕上无需参照。结合词条用途与第218页空白样式，应如何理解共用的镜头指示和表内分栏？用OCR辅助阅读时，怎样确认字段和格位关系？",
+      "source_pages": [
+        137,
+        218
+      ],
+      "source_card_ids": [
+        "book-026",
+        "book-033"
+      ],
+      "required_points": [
+        "书中動画、仕上和摄影都参照时间表作业，不能因存在相机栏就只归摄影使用",
+        "表内字段分组承载不同指示，应按结构读取，不把不同栏的OCR词序当作一个句子或独立无关资料"
+      ],
+      "forbidden_claims": [
+        "时间表只给摄影使用",
+        "OCR相邻标签必属于同一格"
+      ],
+      "clarify_or_refuse_when": "空白样式不提供某镜头的实际栏内值。",
+      "reference_answer": "时间表是多个后续环节共用的镜头指示载体，分栏区分信息用途而非排除其他工序。需要保留字段和格位关系，不能只按OCR线性顺序读取。",
+      "gold_status": "human_reviewed",
+      "revision_note": "落实独立复核附注：OCR为新题显式任务，禁止追溯旧题；按核心影响而非错误个数计分。",
+      "accepted_equivalents": [
+        "核心是動画/仕上/摄影共用和按原图结构读取，不要求背出全部栏名。",
+        "137页的原画番号/動画番号图注不能改称218页印刷栏名；218页下方为アクション/台詞/セル/カメラ。",
+        "主要关系正确但附带一个栏名误述应单列字段问题；实质错分或拼接信息才影响核心分。",
+        "新增OCR要求仅适用于新版开发验证；原FINAL-20正确说明共用和分栏即可，不因未主动谈OCR扣分。附带错误仅在改变核心字段关系时影响主分，不按错误个数机械决定。"
+      ],
+      "scoring_scope": "The OCR requirement is explicit in this revision only; never apply it retroactively to the original FINAL-20.",
+      "amendment": {
+        "date": "2026-10-26",
+        "basis": "evaluation/reviews/independent_ai_v1.json",
+        "implemented_by": "codex_ai",
+        "parent_dataset": "final-v1.1-review"
+      }
+    },
+    {
+      "id": "FINAL-21",
+      "type": "cross_section",
+      "question": "集計表显示某原画担当的三个cut已完成，摄影仍说缺镜头内指示和影像数据。请联系集計表、シート（タイムシート）与撮入れ所需数据，解释为什么统计完成不等于已经具备交摄影条件，并说明应核对哪些材料。",
+      "source_pages": [
+        134,
+        137,
+        139
+      ],
+      "source_card_ids": [
+        "book-022",
+        "book-026",
+        "book-032"
+      ],
+      "required_points": [
+        "集计表是进度汇总，不能替代镜头时间表中的具体作业指示",
+        "撮入还需Layout、时间表、仕上、背景等实际数据及必要特殊处理参考，统计状态不证明这些已交齐"
+      ],
+      "forbidden_claims": [
+        "统计表写完成就足以证明摄影交接数据齐备"
+      ],
+      "clarify_or_refuse_when": "具体缺项需对照当前镜头材料，不从状态字段猜测已交文件。",
+      "reference_answer": "三个层级不同：集计表汇总进度，时间表承载镜头内指示，撮入还要求实际素材数据。完成标记不能代替逐类交接核对。",
+      "gold_status": "human_reviewed",
+      "revision_note": "消除中文时间表的排程/镜头指示歧义；这是已观察题的回归变体，不恢复held-out资格。",
+      "accepted_equivalents": [
+        "タイムシート可译镜头时间表、曝光表、摄影传票，不是制作排程表。",
+        "按实际图像类别解释清单即可，不要求照抄术语或某一软件文件名。"
+      ]
+    },
+    {
+      "id": "FINAL-22",
+      "type": "cross_section",
+      "question": "项目把统一的角色修正集发给各集原画，有人据此断定一定设有总作画监督且所有集都必须由同一人最终签字。结合修正集用途与作监分工，哪些能确认，哪些不能推出？",
+      "source_pages": [
+        64,
+        134,
+        139
+      ],
+      "source_card_ids": [
+        "book-019",
+        "book-027"
+      ],
+      "required_points": [
+        "可以说明修正集用于共享修正/角色参考，但材料用途不等于组织架构证据",
+        "系列不必设置总作监，书中未提供该项目最终签字权限，不能从分发参考册推断同一人审批"
+      ],
+      "forbidden_claims": [
+        "存在统一修正集必然证明总作监职位和统一签字权"
+      ],
+      "clarify_or_refuse_when": "组织名单和审批权需实际项目规则。",
+      "reference_answer": "可确认的是参考资料的用途，不能由此确定总作监必设或谁有最终签字权。应分别核对资料内容、人员分工和项目授权。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-23",
+      "type": "cross_section",
+      "question": "把附录OCR拼接后得到一串标签：タイム、アクション、カメラ、合成・親＋合成・子＝セル番号、Ⓡ理由。能把它们当作一张返修表的连续操作步骤吗？请区分涉及的表格和信息。",
+      "source_pages": [
+        218,
+        221
+      ],
+      "source_card_ids": [
+        "book-033",
+        "book-034"
+      ],
+      "required_points": [
+        "时间表的时间/动作/相机栏、合成传票的亲子合成关系、返修票的理由栏来自不同结构或不同表",
+        "必须按原图分表分栏，不能把OCR线性拼接当成返修工序或审批规则"
+      ],
+      "forbidden_claims": [
+        "把合成加号等号直接当成返修判断规则",
+        "将全部标签归为同一张返修票"
+      ],
+      "clarify_or_refuse_when": "缺少表格位置或实际填写内容时，不重建具体审批流程。",
+      "reference_answer": "不能。时间表、合成传票与返修指示票应分开理解；栏目标签和版面关系不是线性操作步骤，尤其不能把合成关系塞入返修理由流程。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-24",
+      "type": "cross_section",
+      "question": "镜头收到动作Timing修改意见，作业人员只用旧纸切下的孔部加强了定位，随后说时间表里的动作间隔也已解决。结合タップ補強与タイミング/シート，为什么这两件事不能互相代替？",
+      "source_pages": [
+        137,
+        150
+      ],
+      "source_card_ids": [
+        "book-026",
+        "book-029",
+        "book-030"
+      ],
+      "required_points": [
+        "孔部补强处理纸张固定受损/松动的物理问题",
+        "Timing涉及动作时机间隔，需核对相应动作与时间指示；加强定位不自动修改这些内容"
+      ],
+      "forbidden_claims": [
+        "孔部补强自动完成动作时间调整"
+      ],
+      "clarify_or_refuse_when": "具体动作修改数值需实际镜头与指示。",
+      "reference_answer": "补强改善的是固定材料，Timing调整针对动作时间关系。完成物理补强不能证明动作或时间表指示已更新，应分别检查。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-25",
+      "type": "insufficient_evidence",
+      "question": "现在只有书中空白的リテイク指示票和圆圈R标记，没有任何填写记录。能据此确定是谁批准、哪天返还，以及这次返修已经验收吗？",
+      "source_pages": [
+        221
+      ],
+      "source_card_ids": [
+        "book-034"
+      ],
+      "required_points": [
+        "不能从空白样式或R标记推出批准人、返还日期或验收状态",
+        "区分模板字段与实际业务记录，需要相应填写、交接和授权证据"
+      ],
+      "forbidden_claims": [
+        "编造批准人或截止时间",
+        "R标记等同验收通过"
+      ],
+      "clarify_or_refuse_when": "应拒绝给出这些未提供的具体事实，并说明需要哪些记录。",
+      "reference_answer": "不能。模板只展示记录载体，R标记不证明一次实际返修的审批、日期或完成状态，必须取得对应的记录与项目权限信息。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-26",
+      "type": "insufficient_evidence",
+      "question": "只看到一张黄色修正纸，没有署名或审批记录，能否断定它必由作画监督制作且已经最终批准？请依据纸张用途说明判断边界。",
+      "source_pages": [
+        135,
+        139
+      ],
+      "source_card_ids": [
+        "book-023",
+        "book-028"
+      ],
+      "required_points": [
+        "修正用纸可由作监或演出等使用，颜色本身没有本书给出的唯一作者/状态映射",
+        "不能由颜色推断实际作者或最终批准，需要署名和项目记录"
+      ],
+      "forbidden_claims": [
+        "黄色必然表示作监最终批准"
+      ],
+      "clarify_or_refuse_when": "拒绝凭颜色指定作者与审批结果，要求相关记录。",
+      "reference_answer": "不能。纸的颜色和用途不能替代作者及审批记录，本书没有建立颜色到人员和批准状态的一一对应规则。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-27",
+      "type": "insufficient_evidence",
+      "question": "没有提供动作内容、镜头时长或演出意图，只给出书中タイミング和シート的定义，要求计算这段动作每张画应占几格。能得到唯一数值答案吗？",
+      "source_pages": [
+        137,
+        150
+      ],
+      "source_card_ids": [
+        "book-026",
+        "book-029"
+      ],
+      "required_points": [
+        "词条和表格概念不能确定未提供镜头的唯一动作节奏/每张占格",
+        "需动作内容、时长/意图和实际项目时间规范，不把示例24格直接当成该镜头分配答案"
+      ],
+      "forbidden_claims": [
+        "无镜头信息仍给出确定逐张帧数",
+        "把每秒24格误当每张画固定占格数"
+      ],
+      "clarify_or_refuse_when": "拒绝编造数值，指出需要补充的镜头信息。",
+      "reference_answer": "不能得到唯一答案。每秒格数的表述不等于每张画的时间分配，还缺少动作和表现意图等信息，应先补齐这些条件。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-28",
+      "type": "insufficient_evidence",
+      "question": "某项目计划做12集，但没有工作量、人员能力或预算资料。仅凭本书的レイアウト作監说明，能确定必须配几名专职Layout作监吗？",
+      "source_pages": [
+        63
+      ],
+      "source_card_ids": [
+        "book-018"
+      ],
+      "required_points": [
+        "不能只按集数推出专职人数，本书没有给出数值配备公式",
+        "应结合是否兼任、工作负荷和人员/预算等项目条件确认安排"
+      ],
+      "forbidden_claims": [
+        "凭12集直接给出固定人数或每集必配一人"
+      ],
+      "clarify_or_refuse_when": "请求补充工作量和资源条件，不编造人员编制。",
+      "reference_answer": "不能。书中说明岗位可兼任或按条件分设，并未把集数换算成人数。需要实际工作量及资源安排才能决策。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-29",
+      "type": "insufficient_evidence",
+      "question": "书中撮入举了特定软件的数据例子，但没有提供当前接收工作室的技术规范。能保证该工作室只接收这一种文件格式、并且必须使用同厂软件吗？",
+      "source_pages": [
+        134
+      ],
+      "source_card_ids": [
+        "book-022"
+      ],
+      "required_points": [
+        "历史软件示例不构成未提供工作室的唯一格式或工具强制规范",
+        "需要接收方实际格式/兼容性要求；可说明数据类别但不能保证具体技术接收条件"
+      ],
+      "forbidden_claims": [
+        "把本书软件例子直接当成所有当前工作室的唯一规则"
+      ],
+      "clarify_or_refuse_when": "不能作格式接收保证，应索取接收规范。",
+      "reference_answer": "不能保证。可以据资料核对需交哪些类别的数据，但具体格式、工具和兼容性须以接收方规范为准，不能由历史例子外推。",
+      "gold_status": "human_reviewed"
+    },
+    {
+      "id": "FINAL-30",
+      "type": "insufficient_evidence",
+      "question": "只给出第218页未填写的时间表样式，要求判断某镜头第二秒说了什么台词、相机如何运动。表上有这些栏目，是否就能推出实际内容？",
+      "source_pages": [
+        137,
+        218
+      ],
+      "source_card_ids": [
+        "book-026",
+        "book-033"
+      ],
+      "required_points": [
+        "字段存在只说明可以记录这类信息，空白表不提供某镜头的台词或相机动作",
+        "应索取已填写的镜头时间表或具体指示，不能把格位/栏目名当成实际值"
+      ],
+      "forbidden_claims": [
+        "凭空填出第二秒台词或相机动作"
+      ],
+      "clarify_or_refuse_when": "拒绝推断未填写的内容，同时可以解释字段用途。",
+      "reference_answer": "不能。模板规定的是记录位置而非本镜头数据，必须取得实际填写内容；可以说明台词和相机栏用途，但不能编造值。",
+      "gold_status": "human_reviewed"
+    }
+  ],
+  "human_review": {
+    "status": "completed",
+    "reviewer": "user",
+    "date": "2026-10-27",
+    "basis": "explicit_chat_confirmation",
+    "record": "evaluation/reviews/human_confirmation_20261027.json"
+  }
+}

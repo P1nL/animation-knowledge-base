@@ -82,7 +82,7 @@ plugins请求从官方Marketplace安装Ollama和DeepSeek模型供应商，不关
 
 embedding只配置本地 `http://ollama:11434` 的bge-m3，设置Text Embedding默认模型；不会设置LLM密钥。容器使用服务名，不使用宿主的127.0.0.1。SSRF代理仅额外放行ollama这个具体内部域名，不放行整个私有网段。
 
-import只接受corpus内来源卡，复用既有导出校验；默认拒绝未人工校订条目。此处显式 `--include-drafts` 仅用于内部准备，导入文档保留needs_human_review及内部草案提示，不提升知识状态。绝不导入evaluation中的题面、参考答案或评分，也不上传整本PDF或页图。
+import只接受corpus内来源卡，复用既有导出校验；默认拒绝未校订条目。此处显式 `--include-drafts` 仅用于内部准备，导入文档保留needs_human_review及内部草案提示，不提升知识状态。绝不导入evaluation中的题面、参考答案或评分，也不上传整本PDF或页图。
 
 每条卡片导入为text_model；不使用需要LLM生成问答对的qa_model。按H1边界、2000 token上限分块，避免空行分块把页码/待校订标记与正文拆开。选择本地BGE-M3、高质量向量索引、语义检索、top_k=4并关闭Rerank。导入后等status中各文档indexing_status为completed；submitted或indexing不是已完成。本次13条文档均completed，共13个活动块，每个块均保留来源ID、PDF页码和needs_human_review。
 
@@ -104,7 +104,7 @@ import只接受corpus内来源卡，复用既有导出校验；默认拒绝未�
 .\.venv\Scripts\python.exe -m scripts.dify_local app --chat-provider '你的Dify供应商ID' --chat-model '你的模型调用名'
 ```
 
-这两个参数只改变新草案的模型引用，不能代替在Dify中配置供应商凭据。已存在的草案请在LLM节点中修改，避免脚本覆盖人工调整。
+这两个参数只改变新草案的模型引用，不能代替在Dify中配置供应商凭据。已存在的草案请在LLM节点中修改，避免脚本覆盖已有调整。
 
 初始接线时已保存四个节点，知识检索节点单独运行返回succeeded和4条带出处/校订标记的结果，当时未执行LLM节点。后续的受控完整API链路和批次生成见[模型配置手册](MODEL_CONFIGURATION.md)与[最终实验结果](FINAL_RESULTS.md)，不将两种验收阶段混写。
 
@@ -132,7 +132,7 @@ Stop只停止本项目服务，不删除容器数据、模型卷或私有配置�
 
 - 生成随机Redis密码后，最初遗漏同步上游模板中的CELERY_BROKER_URL，导致首次导入在队列派发处返回500。已在初始化脚本和本机.env中同步两者，仅重载本项目服务，并通过Dify重试接口恢复该文档；最终13条均完成索引。
 - Dify 1.18的草案同步接口拒绝旧的environment_variables空字段，已从请求体移除；真实草案已保存并读回确认。
-- 首轮按空行分块造成检索正文缺少来源页码/校订标记，已改为完整知识卡边界并重建这13条内部草案索引；不是改写原始知识卡或声称人工校订完成。
+- 首轮按空行分块造成检索正文缺少来源页码/校订标记，已改为完整知识卡边界并重建这13条内部草案索引；不是改写原始知识卡或声称校订完成。
 - 初始接线时内置页面检查接口不可连接，独立浏览器只确认登录页可渲染；未做界面全流程验收。后续独立实验草案已有真实生成API链路证据，但不等于原用户应用或source-v3的浏览器验收。
 
 ## 配置与数据位置
